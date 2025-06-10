@@ -1,0 +1,12 @@
+# Avoid uploading the .env file with credentials
+.env
+
+# Ignore all __pycache__ folders
+__pycache__/
+
+# Virtual environment
+.venv/
+venv/
+
+# Airflow logs
+airflow/logs/

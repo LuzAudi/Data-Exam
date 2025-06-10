@@ -1,0 +1,31 @@
+[2025-05-28T03:31:06.486+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: price_chart.wait_for_data manual__2025-04-30T03:30:55+00:00 [queued]>
+[2025-05-28T03:31:06.492+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: price_chart.wait_for_data manual__2025-04-30T03:30:55+00:00 [queued]>
+[2025-05-28T03:31:06.493+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-05-28T03:31:06.504+0000] {taskinstance.py:1382} INFO - Executing <Task(SqlSensor): wait_for_data> on 2025-04-30 03:30:55+00:00
+[2025-05-28T03:31:06.509+0000] {standard_task_runner.py:57} INFO - Started process 81 to run task
+[2025-05-28T03:31:06.512+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'price_chart', 'wait_for_data', 'manual__2025-04-30T03:30:55+00:00', '--job-id', '52', '--raw', '--subdir', 'DAGS_FOLDER/price_chart.py', '--cfg-path', '/tmp/tmpe648z4e_']
+[2025-05-28T03:31:06.514+0000] {standard_task_runner.py:85} INFO - Job 52: Subtask wait_for_data
+[2025-05-28T03:31:06.526+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.9/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2025-05-28T03:31:06.558+0000] {task_command.py:416} INFO - Running <TaskInstance: price_chart.wait_for_data manual__2025-04-30T03:30:55+00:00 [running]> on host 368c0d55466f
+[2025-05-28T03:31:06.624+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Luz' AIRFLOW_CTX_DAG_ID='price_chart' AIRFLOW_CTX_TASK_ID='wait_for_data' AIRFLOW_CTX_EXECUTION_DATE='2025-04-30T03:30:55+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-30T03:30:55+00:00'
+[2025-05-28T03:31:06.632+0000] {base.py:73} INFO - Using connection ID 'postgres_conn_id' for task execution.
+[2025-05-28T03:31:06.634+0000] {sql.py:95} INFO - Poking: 
+            SELECT 1 FROM coin_raw_data
+            WHERE coin = 'bitcoin'
+              AND date = '2025-04-30'
+            LIMIT 1;
+         (with parameters None)
+[2025-05-28T03:31:06.640+0000] {base.py:73} INFO - Using connection ID 'postgres_conn_id' for task execution.
+[2025-05-28T03:31:06.643+0000] {sql.py:418} INFO - Running statement: 
+            SELECT 1 FROM coin_raw_data
+            WHERE coin = 'bitcoin'
+              AND date = '2025-04-30'
+            LIMIT 1;
+        , parameters: None
+[2025-05-28T03:31:06.644+0000] {sql.py:427} INFO - Rows affected: 1
+[2025-05-28T03:31:06.644+0000] {base.py:287} INFO - Success criteria met. Exiting.
+[2025-05-28T03:31:06.651+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=price_chart, task_id=wait_for_data, execution_date=20250430T033055, start_date=20250528T033106, end_date=20250528T033106
+[2025-05-28T03:31:06.684+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-05-28T03:31:06.701+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
